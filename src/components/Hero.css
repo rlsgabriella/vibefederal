@@ -1,0 +1,275 @@
+.hero {
+  position: relative;
+  padding: 110px 0 60px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #f0fbf5 0%, #fff 50%, #f0f6fb 100%);
+}
+
+.hero__blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.hero__blob--1 {
+  width: 280px; height: 280px;
+  background: var(--green);
+  top: -80px; right: -60px;
+  opacity: 0.1;
+}
+
+.hero__blob--2 {
+  width: 200px; height: 200px;
+  background: var(--blue);
+  bottom: 0; left: -60px;
+  opacity: 0.08;
+}
+
+.hero__blob--3 {
+  width: 140px; height: 140px;
+  background: var(--yellow);
+  top: 40%; right: 10%;
+  opacity: 0.12;
+}
+
+.hero__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero__visual { display: none; }
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 6vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--gray-900);
+  margin-bottom: 20px;
+}
+
+.hero__title-highlight {
+  color: var(--green);
+  position: relative;
+}
+
+.hero__subtitle {
+  font-size: 1rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  max-width: 480px;
+  margin-bottom: 28px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.hero__btn-primary,
+.hero__btn-outline {
+  font-size: 0.95rem;
+  padding: 14px 24px;
+  width: 100%;
+  justify-content: center;
+}
+
+.hero__btn-outline {
+  color: var(--gray-700);
+  border-color: var(--gray-300);
+}
+
+.hero__btn-outline:hover { border-color: var(--green); color: var(--green); }
+
+.hero__stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.hero__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero__stat strong {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+
+.hero__stat span {
+  font-size: 0.78rem;
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+.hero__stat-divider {
+  width: 1px;
+  height: 32px;
+  background: var(--gray-200);
+}
+
+.hero__card-mock {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  overflow: hidden;
+  animation: float 4s ease-in-out infinite;
+}
+
+.hero__mock-header {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hero__mock-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero__mock-sigla {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: white;
+}
+
+.hero__mock-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero__mock-line {
+  height: 10px;
+  background: var(--gray-100);
+  border-radius: 100px;
+  width: 100%;
+}
+
+.hero__mock-line--wide  { width: 90%; }
+.hero__mock-line--medium{ width: 70%; }
+.hero__mock-line--sm    { width: 80%; height: 8px; }
+
+.hero__mock-node {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.hero__mock-dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.hero__mock-branch {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hero__tag {
+  position: absolute;
+  background: white;
+  border-radius: 100px;
+  padding: 8px 14px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  white-space: nowrap;
+  animation: float 3s ease-in-out infinite;
+}
+
+.hero__tag--1 { top: -16px;  right: 30px;  animation-delay: 0.3s; }
+.hero__tag--2 { bottom: 60px; left: -30px; animation-delay: 0.8s; }
+.hero__tag--3 { bottom: -12px; right: 20px; animation-delay: 1.2s; }
+
+@media (min-width: 480px) {
+  .hero__actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .hero__btn-primary,
+  .hero__btn-outline {
+    width: auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero {
+    padding: 130px 0 80px;
+  }
+
+  .hero__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+  }
+
+  .hero__visual {
+    display: block;
+    position: relative;
+  }
+
+  .hero__blob--1 {
+    width: 500px; height: 500px;
+    top: -100px; right: -100px;
+  }
+
+  .hero__blob--2 {
+    width: 300px; height: 300px;
+    left: -80px;
+  }
+
+  .hero__blob--3 {
+    width: 200px; height: 200px;
+    right: 30%;
+  }
+
+  .hero__subtitle {
+    font-size: 1.05rem;
+    margin-bottom: 32px;
+  }
+
+  .hero__actions {
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+
+  .hero__btn-primary,
+  .hero__btn-outline {
+    font-size: 1rem;
+    padding: 14px 28px;
+  }
+
+  .hero__stat strong {
+    font-size: 1.4rem;
+  }
+
+  .hero__stat-divider {
+    height: 36px;
+  }
+}

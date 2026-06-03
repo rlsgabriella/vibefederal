@@ -1,0 +1,129 @@
+.trilha-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  animation: fadeUp 0.5s ease both;
+  position: relative;
+  border: 1.5px solid var(--gray-100);
+  min-width: 0;
+}
+
+.trilha-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.11);
+  border-color: var(--card-accent);
+}
+
+.trilha-card--destaque { border-color: var(--card-accent); }
+
+.trilha-card__badge-destaque {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: white;
+  color: var(--gray-800);
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 100px;
+  z-index: 2;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.14);
+}
+
+.trilha-card__header {
+  padding: 22px 22px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 96px;
+}
+
+.trilha-card__header-label {
+  font-family: var(--font-display);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.80);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 3px;
+}
+
+.trilha-card__sigla {
+  font-family: var(--font-display);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.trilha-card__cargo {
+  display: inline-block;
+  font-size: 0.66rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.92);
+  background: rgba(0,0,0,0.18);
+  padding: 3px 9px;
+  border-radius: 100px;
+  margin-top: 7px;
+}
+
+.trilha-card__header-logo { font-size: 1.8rem; opacity: 0.45; }
+
+.trilha-card__body {
+  padding: 18px 22px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.card-nome {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.card-subtitulo {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card-desc-curta {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  line-height: 1.55;
+}
+
+.card-desc-longa {
+  font-size: 0.80rem;
+  font-weight: 400;
+  color: var(--gray-500);
+  line-height: 1.65;
+}
+
+.card-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--green);
+  margin-top: 2px;
+}
+
+.trilha-card__footer { padding: 0 22px 22px; }
+
+.trilha-card__btn {
+  width: 100%;
+  justify-content: center;
+  font-size: 0.85rem;
+  padding: 11px 0;
+}

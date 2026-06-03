@@ -1,0 +1,104 @@
+.carrossel-section {
+  background: #F7F8FA;
+  overflow: hidden;
+  border-top: 1px solid #EAEDF2;
+  border-bottom: 1px solid #EAEDF2;
+}
+
+.carrossel-header {
+  text-align: center;
+  margin-bottom: 48px;
+  overflow: visible;
+}
+
+.carrossel-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--green);
+  background: var(--green-light);
+  padding: 5px 14px;
+  border-radius: 100px;
+  margin-bottom: 14px;
+}
+
+.carrossel-track-wrap {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+.carrossel-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scroll-left 45s linear infinite;
+  align-items: center;
+}
+
+.carrossel-track--paused { animation-play-state: paused; }
+
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(calc(-100% / 3)); }
+}
+
+.carrossel-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-width: 180px;
+  padding: 16px 20px;
+  background: white;
+  border-radius: 14px;
+  border: 1px solid #E0E4EA;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  flex-shrink: 0;
+  cursor: default;
+}
+
+.carrossel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+}
+
+.carrossel-card__logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  min-width: 80px;
+}
+
+.carrossel-card__logo img {
+  object-fit: contain;
+  height: 40px;
+  max-width: 140px;
+  width: auto;
+  filter: none;
+}
+
+.carrossel-card__fallback {
+  display: none;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gray-700);
+  letter-spacing: -0.02em;
+}
+
+.carrossel-card__nome {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #8A94A3;
+  text-align: center;
+  max-width: 160px;
+  line-height: 1.35;
+}

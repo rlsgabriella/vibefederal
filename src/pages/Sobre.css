@@ -1,0 +1,256 @@
+.sobre-section {
+  padding: 48px 0;
+  background: white;
+}
+
+.sobre-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.sobre-texto h2 {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 18px;
+  letter-spacing: -0.02em;
+}
+
+.sobre-texto p {
+  font-size: 0.96rem;
+  color: var(--gray-600);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.sobre-texto strong { color: var(--gray-900); font-weight: 700; }
+
+/* Números */
+.sobre-numeros {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.sobre-num-card {
+  background: var(--gray-50);
+  border-radius: 16px;
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border: 1px solid var(--gray-100);
+  transition: transform 0.2s;
+}
+
+.sobre-num-card:hover { transform: translateY(-3px); }
+
+.sobre-num-card strong {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.sobre-num-card span {
+  font-size: 0.78rem;
+  color: var(--gray-500);
+  font-weight: 500;
+}
+
+/* Valores */
+.valores-section {
+  padding: 48px 0;
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-100);
+}
+
+.valores-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-top: 36px;
+}
+
+.valor-card {
+  background: white;
+  border-radius: 16px;
+  padding: 24px 20px;
+  border: 1px solid var(--gray-100);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  animation: fadeUp 0.5s ease both;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.valor-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+}
+
+.valor-emoji {
+  font-size: 1.8rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.valor-card h3 {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 6px;
+  letter-spacing: -0.01em;
+}
+
+.valor-card p {
+  font-size: 0.80rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+}
+
+/* FAQ */
+.faq-section {
+  padding: 48px 0;
+  background: white;
+  border-top: 1px solid var(--gray-100);
+}
+
+.faq-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 32px;
+  max-width: 740px;
+}
+
+.faq-item {
+  background: white;
+  border-radius: 12px;
+  border: 1.5px solid var(--gray-100);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.faq-item--aberta { border-color: var(--green); }
+
+.faq-pergunta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  width: 100%;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.90rem;
+  font-weight: 600;
+  color: var(--gray-800);
+  gap: 12px;
+  transition: background 0.15s;
+}
+
+.faq-pergunta:hover { background: var(--gray-50); }
+.faq-item--aberta .faq-pergunta { background: var(--green-light); color: var(--green); }
+
+.faq-chevron { font-size: 0.65rem; color: var(--gray-400); flex-shrink: 0; }
+
+.faq-resposta {
+  padding: 0 20px 18px;
+  font-size: 0.85rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  border-top: 1px solid var(--gray-100);
+  padding-top: 14px;
+}
+
+/* Contato */
+.contato-section {
+  padding: 48px 0;
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-100);
+}
+
+.contato-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.contato-card {
+  background: white;
+  border-radius: 18px;
+  padding: 28px 24px;
+  border: 1px solid var(--gray-100);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  animation: fadeUp 0.5s ease both;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.contato-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+}
+
+.contato-icon { font-size: 2rem; }
+
+.contato-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gray-900);
+  letter-spacing: -0.01em;
+}
+
+.contato-card p {
+  font-size: 0.82rem;
+  color: var(--gray-500);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.contato-card .btn { justify-content: center; margin-top: 4px; }
+
+@media (min-width: 480px) {
+  .sobre-numeros {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 640px) {
+  .valores-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .sobre-section,
+  .valores-section,
+  .contato-section,
+  .faq-section {
+    padding: 72px 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .sobre-grid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+  }
+
+  .valores-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .contato-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

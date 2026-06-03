@@ -1,0 +1,238 @@
+.detail-hero {
+  padding: 100px 0 32px;
+}
+
+.detail-hero__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.detail-hero__logo {
+  font-size: 3rem;
+  opacity: 0.3;
+  align-self: flex-end;
+}
+
+@media (min-width: 768px) {
+  .detail-hero {
+    padding: 120px 0 40px;
+  }
+
+  .detail-hero__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0;
+  }
+
+  .detail-hero__logo {
+    font-size: 5rem;
+    align-self: auto;
+  }
+}
+
+.detail-hero__label {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 900;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.detail-hero__sigla {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  color: white;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.detail-hero__cargo {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.9);
+  background: rgba(0,0,0,0.15);
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  padding: 48px 0 60px;
+  align-items: start;
+}
+
+/* Main */
+.detail-nome {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--gray-900);
+  margin-bottom: 6px;
+}
+
+.detail-subtitulo {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--gray-400);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 16px;
+}
+
+.detail-desc-curta {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.detail-desc-longa {
+  font-size: 0.95rem;
+  color: var(--gray-600);
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.detail-tag {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--green);
+  margin-bottom: 32px;
+}
+
+.detail-topicos h3,
+.detail-formato h3 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--gray-900);
+  margin-bottom: 14px;
+}
+
+.detail-topicos ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 36px;
+}
+
+.detail-topicos li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: var(--gray-700);
+}
+
+.detail-topico-dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.detail-formato-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.formato-item {
+  background: var(--gray-50);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  text-align: center;
+}
+
+.formato-item span { font-size: 1.6rem; display: block; margin-bottom: 6px; }
+.formato-item strong { font-size: 0.82rem; display: block; margin-bottom: 4px; }
+.formato-item p { font-size: 0.76rem; color: var(--gray-500); }
+
+/* Sidebar CTA */
+.detail-cta-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: static;
+}
+
+.detail-cta-header {
+  padding: 20px 24px;
+}
+
+.detail-cta-header p {
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.8);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.detail-cta-header h3 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: white;
+}
+
+.detail-cta-body { padding: 24px; display: flex; flex-direction: column; gap: 10px; }
+
+.detail-cta-desc { font-size: 0.85rem; color: var(--gray-600); line-height: 1.6; }
+
+.detail-cta-duvida {
+  color: var(--gray-600);
+  border-color: var(--gray-200);
+  font-size: 0.82rem;
+  padding: 10px;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  box-shadow: none;
+}
+
+.detail-garantias {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 6px;
+}
+
+.detail-garantias span {
+  font-size: 0.8rem;
+  color: var(--gray-600);
+}
+
+@media (min-width: 480px) {
+  .detail-formato-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .detail-grid {
+    grid-template-columns: 1fr 380px;
+    gap: 48px;
+    padding: 48px 0 80px;
+  }
+
+  .detail-cta-card {
+    position: sticky;
+    top: 88px;
+  }
+
+  .detail-formato-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

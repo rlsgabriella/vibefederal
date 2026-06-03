@@ -1,0 +1,159 @@
+.produtos-section {
+  background: white;
+}
+
+.diferenciais-section {
+  background: var(--gray-50);
+}
+
+.diferenciais-inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.diferenciais-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.diferencial-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition);
+  animation: fadeUp 0.5s ease both;
+  min-width: 0;
+}
+
+.diferencial-card:hover { transform: translateY(-3px); }
+
+.diferencial-card__icone {
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.diferencial-card h4 {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 4px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.diferencial-card p {
+  font-size: 0.82rem;
+  color: var(--gray-500);
+  line-height: 1.65;
+}
+
+.dicas-preview-section {
+  background: white;
+}
+
+.cta-section {
+  background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '🌿';
+  position: absolute;
+  font-size: 120px;
+  opacity: 0.05;
+  right: -40px;
+  top: -20px;
+  pointer-events: none;
+}
+
+.cta-inner {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-inner h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 5vw, 2rem);
+  font-weight: 700;
+  color: white;
+  margin-bottom: 14px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.cta-inner p {
+  font-size: 0.95rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+
+.cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.cta-actions .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.cta-actions .btn-green {
+  background: white;
+  color: var(--green);
+}
+
+.cta-actions .btn-green:hover {
+  background: var(--green-light);
+}
+
+@media (min-width: 480px) {
+  .cta-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .cta-actions .btn {
+    width: auto;
+  }
+
+  .cta-section::before {
+    font-size: 200px;
+  }
+}
+
+@media (min-width: 640px) {
+  .diferenciais-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .diferenciais-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+
+  .cta-inner p {
+    font-size: 1rem;
+    margin-bottom: 32px;
+  }
+
+  .cta-actions {
+    gap: 16px;
+  }
+}
