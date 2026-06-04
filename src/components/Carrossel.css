@@ -6,9 +6,24 @@
 }
 
 .carrossel-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   margin-bottom: 48px;
   overflow: visible;
+}
+
+.carrossel-header .section-title {
+  width: 100%;
+  text-align: center;
+}
+
+.carrossel-header .section-subtitle {
+  margin: 10px auto 0;
+  max-width: 560px;
+  width: 100%;
+  text-align: center;
 }
 
 .carrossel-badge {

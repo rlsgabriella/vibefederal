@@ -7,7 +7,6 @@ import './Navbar.css';
 const navLinks = [
   { label: 'Início',       href: '/' },
   { label: 'Materiais',    href: '/materiais' },
-  { label: 'Disciplinas',  href: '/disciplinas' },
   { label: 'Dicas',        href: '/dicas' },
   { label: 'Sobre',        href: '/sobre' },
 ];
@@ -30,7 +29,7 @@ export default function Navbar() {
   return (
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
-        <Link to="/" className="navbar__logo" onClick={goTop} aria-label="Vibe Federal – Voltar ao início">
+        <Link to="/" className="navbar__logo" onClick={goTop} aria-label="Vibe Federal, voltar ao início">
           <LogoVibeFederal height={42} />
         </Link>
 

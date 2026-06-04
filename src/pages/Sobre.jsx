@@ -33,7 +33,7 @@ export default function Sobre() {
         <div className="container">
           <div className="badge" style={{ marginBottom: 14 }}>🌿 Nossa história</div>
           <h1>Sobre a Vibe Federal</h1>
-          <p>Nascemos pra tornar o estudo para concursos federais mais leve, estratégico e humano.</p>
+          <p>Existimos para tornar a preparação para concursos federais mais leve, estratégica e humana.</p>
         </div>
       </div>
 
@@ -44,16 +44,16 @@ export default function Sobre() {
             <div className="sobre-texto fade-up">
               <h2>Quem somos?</h2>
               <p>
-                A <strong>Vibe Federal</strong> nasceu pra simplificar o estudo de quem sonha com uma vaga
-                nas Universidades e Institutos Federais. Sabemos que a preparação para concursos pode
-                ser exaustiva e solitária — e criamos um jeito diferente de aprender.
+                A <strong>Vibe Federal</strong> surgiu para simplificar a vida de quem sonha com uma vaga
+                nas Universidades e Institutos Federais. Sabemos que a preparação pode ser cansativa,
+                e por isso oferecemos um caminho de estudo mais claro e visual.
               </p>
               <p>
-                Criamos materiais visuais, diretos e didáticos — feitos pra te ajudar a aprender com
-                clareza, estratégia e constância, sem sobrecarga e sem enrolação.
+                Nossos materiais são diretos e didáticos, feitos para você aprender com estratégia
+                e constância, sem excesso de teoria e sem perder tempo com o que não cai na prova.
               </p>
               <p>
-                Porque estudar é importante, mas <strong>estudar com leveza e propósito faz toda a diferença.</strong>
+                Estudar é sério, e <strong>estudar com leveza e propósito faz toda a diferença</strong> na sua aprovação.
               </p>
             </div>
 

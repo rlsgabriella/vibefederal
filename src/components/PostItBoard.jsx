@@ -29,7 +29,7 @@ export default function PostItBoard({ dicas }) {
             <div className="postit__back">
               <span className="postit__emoji">💡</span>
               <p className="postit__texto postit__texto--back">
-                <strong>Dica bônus:</strong> Aplique essa técnica por 7 dias seguidos e observe a diferença na sua retenção. Consistência é mais poderosa que intensidade!
+                <strong>Dica extra:</strong> Use essa técnica por 7 dias seguidos e compare sua retenção. Constância vale mais que maratonas de estudo.
               </p>
             </div>
           </div>

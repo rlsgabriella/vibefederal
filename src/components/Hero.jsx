@@ -23,8 +23,8 @@ export default function Hero() {
           </h1>
 
           <p className="hero__subtitle">
-            Mapas mentais prontos, claros e didáticos — criados no padrão Vibe Federal
-            pra te ajudar a dominar os conteúdos dos editais com foco e tranquilidade.
+            Mapas mentais no padrão Vibe Federal para você dominar o edital com foco,
+            organização e tranquilidade na preparação.
           </p>
 
           <div className="hero__actions">

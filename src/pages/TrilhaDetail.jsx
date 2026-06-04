@@ -23,9 +23,9 @@ export default function TrilhaDetail() {
 
   const topicos = [
     'Princípios Constitucionais Aplicados à Administração Pública',
-    'Lei 8.112/90 – Estatuto dos Servidores Públicos Federais',
-    'Lei 9.784/99 – Processo Administrativo Federal',
-    'Decreto 1.171/94 – Código de Ética Profissional',
+    'Lei 8.112/90, Estatuto dos Servidores Públicos Federais',
+    'Lei 9.784/99, Processo Administrativo Federal',
+    'Decreto 1.171/94, Código de Ética Profissional',
     'Lei de Responsabilidade Fiscal (LC 101/2000)',
     'Organização da Administração Pública Federal',
     'Controle da Administração Pública',

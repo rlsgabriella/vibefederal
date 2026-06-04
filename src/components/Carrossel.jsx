@@ -31,7 +31,7 @@ export default function Carrossel() {
         <div className="carrossel-badge">🏛️ Concursos com material disponível</div>
         <h2 className="section-title">Institutos e Universidades Federais</h2>
         <p className="section-subtitle">
-          Material preparatório focado para os principais concursos federais do país.
+          Preparamos conteúdo para os principais concursos de institutos e universidades federais do Brasil.
         </p>
       </div>
 

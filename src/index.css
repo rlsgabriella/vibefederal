@@ -106,9 +106,11 @@ main > section:not(.hero) {
   font-size: 1rem;
   font-weight: 400;
   color: var(--gray-500);
-  margin-top: 10px;
+  margin: 10px auto 0;
   max-width: 560px;
+  width: 100%;
   line-height: 1.65;
+  text-align: center;
 }
 
 .section-intro {

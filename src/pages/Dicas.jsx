@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { dicas } from '../data/index.js';
+import MapaEstudos from '../components/MapaEstudos.jsx';
 import './Materiais.css';
 import './DicasPage.css';
 
@@ -136,6 +137,17 @@ export default function Dicas() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── MAPA DE ESTUDOS ── */}
+      <section className="mapa-section">
+        <div className="container">
+          <div className="section-intro">
+            <h2 className="section-title">Monte seu Mapa de Estudos</h2>
+            <p className="section-subtitle">Organize as disciplinas do seu edital e acompanhe seu progresso.</p>
+          </div>
+          <MapaEstudos />
         </div>
       </section>
 

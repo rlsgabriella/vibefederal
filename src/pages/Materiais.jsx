@@ -12,12 +12,10 @@ const ABAS = [
   { id: 'concursos',   label: '🏛️ Por Concurso' },
 ];
 
-const cargos = ['Todos', 'Docente', 'TAE'];
-
 const leis = [
   { id: 'lei-8112',  titulo: 'Lei 8.112/90',       subtitulo: 'Estatuto dos Servidores Públicos Federais', emoji: '📋', preco: 'R$ 29,90', novo: false, concursos: ['IFC', 'IFPI', 'IFCE', 'IFAL', 'IFPB'] },
   { id: 'lei-9784',  titulo: 'Lei 9.784/99',        subtitulo: 'Processo Administrativo Federal',          emoji: '⚙️', preco: 'R$ 22,90', novo: true,  concursos: ['IFC', 'IFCE', 'IFPB'] },
-  { id: 'cf-88',     titulo: 'CF/88 – Art. 37 a 41',subtitulo: 'Administração Pública na Constituição',    emoji: '📜', preco: 'R$ 24,90', novo: false, concursos: ['IFC', 'IFPI', 'IFCE', 'IFAL'] },
+  { id: 'cf-88',     titulo: 'CF/88, arts. 37 a 41', subtitulo: 'Administração Pública na Constituição',    emoji: '📜', preco: 'R$ 24,90', novo: false, concursos: ['IFC', 'IFPI', 'IFCE', 'IFAL'] },
   { id: 'dec-1171',  titulo: 'Decreto 1.171/94',    subtitulo: 'Código de Ética Profissional do Servidor', emoji: '🌟', preco: 'R$ 17,90', novo: false, concursos: ['IFCE', 'IFAL', 'IFPB', 'IFRN'] },
   { id: 'lrf',       titulo: 'LC 101/2000',          subtitulo: 'Lei de Responsabilidade Fiscal',           emoji: '💰', preco: 'R$ 22,90', novo: false, concursos: ['IFC', 'IFPI'] },
   { id: 'lei-8666',  titulo: 'Lei 8.666/93',         subtitulo: 'Licitações e Contratos',                   emoji: '📑', preco: 'R$ 24,90', novo: true,  concursos: ['IFC', 'IFCE', 'IFPB', 'IFRN'] },
@@ -36,12 +34,7 @@ const porConcurso = [
 
 export default function Materiais() {
   const [aba, setAba]       = useState('pacotes');
-  const [cargo, setCargo]   = useState('Todos');
   const [discAtiva, setDisc]= useState(null);
-
-  const filtradas = cargo === 'Todos'
-    ? trilhas
-    : trilhas.filter(t => t.cargo === cargo || t.cargo?.includes(cargo));
 
   return (
     <main>
@@ -50,7 +43,7 @@ export default function Materiais() {
         <div className="container">
           <div className="badge" style={{ marginBottom: 14 }}>📦 Loja de materiais</div>
           <h1>Materiais para sua preparação</h1>
-          <p>Pacotes completos por concurso, mapas por disciplina, por lei ou filtre pelo seu concurso específico. Tudo no padrão Vibe Federal.</p>
+          <p>Pacotes por concurso, mapas por disciplina ou por lei. Encontre o material certo para o edital que você está enfrentando.</p>
         </div>
       </div>
 
@@ -79,18 +72,11 @@ export default function Materiais() {
                 <h2>Pacotes Completos por Concurso</h2>
                 <p>Cada pacote reúne toda a legislação cobrada em um concurso específico, organizado em mapas mentais visuais e didáticos.</p>
               </div>
-              <div className="filtros">
-                {cargos.map(c => (
-                  <button key={c} className={`filtro-btn ${cargo === c ? 'filtro-btn--active' : ''}`} onClick={() => setCargo(c)}>
-                    {c}
-                  </button>
-                ))}
-              </div>
             </div>
             <div className="trilhas-grid-page">
-              {filtradas.map((t, i) => <TrilhaCard key={t.id} trilha={t} delay={i * 60} />)}
+              {trilhas.map((t, i) => <TrilhaCard key={t.id} trilha={t} delay={i * 60} />)}
             </div>
-            {filtradas.length === 0 && (
+            {trilhas.length === 0 && (
               <div className="empty-state"><span>🔍</span><p>Nenhum pacote encontrado.</p></div>
             )}
           </div>

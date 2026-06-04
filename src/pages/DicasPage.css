@@ -242,6 +242,17 @@
   margin-top: 1px;
 }
 
+/* ===== MAPA DE ESTUDOS (seção wrapper) ===== */
+.mapa-section {
+  padding: 56px 0 64px;
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-100);
+}
+
+.mapa-section .section-intro {
+  margin-bottom: 32px;
+}
+
 /* ===== CTA DICAS ===== */
 .dicas-cta {
   padding: 48px 0;

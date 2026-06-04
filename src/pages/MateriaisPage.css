@@ -2,6 +2,7 @@
 .mat-abas-bar {
   background: white;
   border-bottom: 1px solid var(--gray-100);
+  padding: 0;
   position: sticky;
   top: 72px;
   z-index: 50;
@@ -39,14 +40,22 @@
 }
 
 /* ===== CONTENT ===== */
-.mat-content { padding: 48px 0 72px; }
+.mat-content {
+  padding: 48px 0 72px;
+  padding-top: 48px;
+}
+
+.mat-section {
+  padding-top: 40px;
+}
 
 .mat-section-header {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   gap: 16px;
-  margin-bottom: 36px;
+  padding-top: 32px;
+  margin-bottom: 40px;
 }
 
 .mat-section-header h2 {
@@ -54,7 +63,8 @@
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--gray-900);
-  margin-bottom: 6px;
+  margin-top: 0;
+  margin-bottom: 8px;
   letter-spacing: -0.02em;
 }
 
