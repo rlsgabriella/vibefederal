@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import LogoVibeFederal from '../assets/LogoVibeFederal.jsx';
+import logoVibe from '../assets/logo-vibe.png';
 import './Navbar.css';
 
 const navLinks = [
@@ -30,7 +30,7 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="container navbar__inner">
         <Link to="/" className="navbar__logo" onClick={goTop} aria-label="Vibe Federal, voltar ao início">
-          <LogoVibeFederal height={42} />
+          <img src={logoVibe} alt="Vibe Federal" style={{ height: 42 }} />
         </Link>
 
         <nav className={`navbar__links ${open ? 'navbar__links--open' : ''}`}>
