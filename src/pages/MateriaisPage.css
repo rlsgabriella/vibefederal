@@ -462,3 +462,79 @@
     flex-wrap: wrap;
   }
 }
+
+/* ===== CARROSSEL MOBILE ===== */
+@media (max-width: 639px) {
+  .mob-carousel-wrap {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .mob-carousel-btn {
+    flex-shrink: 0;
+    background: white;
+    border: 1.5px solid var(--gray-200);
+    border-radius: 50%;
+    width: 34px;
+    height: 34px;
+    font-size: 1.3rem;
+    font-weight: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+    cursor: pointer;
+    color: var(--gray-700);
+    padding: 0;
+    line-height: 1;
+    align-self: center;
+    transition: background 0.15s, box-shadow 0.15s;
+    z-index: 2;
+  }
+
+  .mob-carousel-btn:active {
+    background: var(--gray-50);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  }
+
+  .trilhas-grid-page,
+  .disc-grid-full,
+  .leis-grid,
+  .concurso-grid {
+    flex: 1;
+    min-width: 0;
+    display: flex !important;
+    flex-direction: row !important;
+    grid-template-columns: unset !important;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 14px !important;
+    padding: 8px 4px 16px !important;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .trilhas-grid-page::-webkit-scrollbar,
+  .disc-grid-full::-webkit-scrollbar,
+  .leis-grid::-webkit-scrollbar,
+  .concurso-grid::-webkit-scrollbar { display: none; }
+
+  .trilhas-grid-page > *,
+  .disc-grid-full > *,
+  .concurso-grid > * {
+    flex: 0 0 78vw;
+    max-width: 300px;
+    scroll-snap-align: start;
+  }
+
+  .leis-grid > * {
+    flex: 0 0 82vw;
+    max-width: 320px;
+    scroll-snap-align: start;
+  }
+}
+
+@media (min-width: 640px) {
+  .mob-carousel-btn { display: none; }
+}

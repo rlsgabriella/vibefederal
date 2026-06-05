@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import TrilhaCard from '../components/TrilhaCard.jsx';
 import { trilhas, disciplinas } from '../data/index.js';
@@ -31,6 +31,26 @@ const porConcurso = [
   { sigla: 'IFPB', cor: '#003366', cargo: 'Docente e TAE', qtd: 6, destaque: false },
   { sigla: 'IFRN', cor: '#006843', cargo: 'Docente',        qtd: 5, destaque: false },
 ];
+
+function MobileCarousel({ children, className }) {
+  const trackRef = useRef(null);
+  const scroll = (dir) => {
+    const el = trackRef.current;
+    if (!el) return;
+    const first = el.firstElementChild;
+    if (!first) return;
+    const style = window.getComputedStyle(el);
+    const gap = parseFloat(style.columnGap) || parseFloat(style.gap) || 16;
+    el.scrollBy({ left: dir * (first.offsetWidth + gap), behavior: 'smooth' });
+  };
+  return (
+    <div className="mob-carousel-wrap">
+      <button className="mob-carousel-btn mob-carousel-btn--prev" onClick={() => scroll(-1)} aria-label="Anterior">‹</button>
+      <div className={className} ref={trackRef}>{children}</div>
+      <button className="mob-carousel-btn mob-carousel-btn--next" onClick={() => scroll(1)} aria-label="Próximo">›</button>
+    </div>
+  );
+}
 
 export default function Materiais() {
   const [aba, setAba]       = useState('pacotes');
@@ -73,9 +93,9 @@ export default function Materiais() {
                 <p>Cada pacote reúne toda a legislação cobrada em um concurso específico, organizado em mapas mentais visuais e didáticos.</p>
               </div>
             </div>
-            <div className="trilhas-grid-page">
+            <MobileCarousel className="trilhas-grid-page">
               {trilhas.map((t, i) => <TrilhaCard key={t.id} trilha={t} delay={i * 60} />)}
-            </div>
+            </MobileCarousel>
             {trilhas.length === 0 && (
               <div className="empty-state"><span>🔍</span><p>Nenhum pacote encontrado.</p></div>
             )}
@@ -101,7 +121,7 @@ export default function Materiais() {
                 ))}
               </div>
             </div>
-            <div className="disc-grid-full">
+            <MobileCarousel className="disc-grid-full">
               {disciplinas.filter(d => !discAtiva || d.id === discAtiva).map((disc, i) => (
                 <div key={disc.id} className="disc-card-full fade-up" style={{ '--dc': disc.cor, animationDelay: `${i * 60}ms` }}>
                   <div className="disc-card-full__top">
@@ -129,7 +149,7 @@ export default function Materiais() {
                   ))}
                 </div>
               ))}
-            </div>
+            </MobileCarousel>
           </div>
         )}
 
@@ -142,7 +162,7 @@ export default function Materiais() {
                 <p>Precisa focar em uma lei específica? Compre apenas o mapa que precisa e estude com precisão cirúrgica.</p>
               </div>
             </div>
-            <div className="leis-grid">
+            <MobileCarousel className="leis-grid">
               {leis.map((l, i) => (
                 <div key={l.id} className="lei-card fade-up" style={{ animationDelay: `${i * 50}ms` }}>
                   <div className="lei-card__emoji">{l.emoji}</div>
@@ -166,7 +186,7 @@ export default function Materiais() {
                   </div>
                 </div>
               ))}
-            </div>
+            </MobileCarousel>
           </div>
         )}
 
@@ -179,7 +199,7 @@ export default function Materiais() {
                 <p>Selecione seu concurso e veja todos os materiais disponíveis, desde pacotes completos até mapas individuais.</p>
               </div>
             </div>
-            <div className="concurso-grid">
+            <MobileCarousel className="concurso-grid">
               {porConcurso.map((c, i) => (
                 <div key={c.sigla} className="concurso-card fade-up" style={{ '--cc': c.cor, animationDelay: `${i * 60}ms` }}>
                   {c.destaque && <div className="concurso-destaque">⭐ Mais vendido</div>}
@@ -207,7 +227,7 @@ export default function Materiais() {
                   </div>
                 </div>
               ))}
-            </div>
+            </MobileCarousel>
           </div>
         )}
 
