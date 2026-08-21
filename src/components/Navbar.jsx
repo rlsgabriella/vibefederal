@@ -7,7 +7,6 @@ import './Navbar.css';
 const navLinks = [
   { label: 'Início',       href: '/' },
   { label: 'Materiais',    href: '/materiais' },
-  { label: 'Dicas',        href: '/dicas' },
   { label: 'Sobre',        href: '/sobre' },
 ];
 
@@ -44,14 +43,6 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <a
-            href="https://wa.me/5585992223053"
-            target="_blank"
-            rel="noreferrer"
-            className="btn btn-green navbar__cta"
-          >
-            💬 WhatsApp
-          </a>
         </nav>
 
         <button className="navbar__burger" onClick={() => setOpen(o => !o)} aria-label="Menu">

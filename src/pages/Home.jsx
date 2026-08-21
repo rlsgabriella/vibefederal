@@ -66,20 +66,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="dicas-preview-section">
+      <section className="dicas-home">
         <div className="container">
-          <div className="section-intro">
-            <h2 className="section-title">Dicas de estudo 📌</h2>
-            <p className="section-subtitle">
-              Hábitos simples que melhoram sua retenção. Toque em cada post-it e veja a dica extra.
-            </p>
-          </div>
+          <p className="section-eyebrow">— DICAS DE ESTUDO</p>
+          <h2 className="dicas-home__titulo">Estude com mais estratégia</h2>
+          <p className="dicas-home__sub">
+            Pequenos hábitos que fazem toda a diferença na sua preparação.
+          </p>
           <PostItBoard dicas={dicas.slice(0, 3)} />
-          <div className="dicas-preview__cta">
-            <Link to="/dicas" className="btn btn-outline" style={{ color: 'var(--green)', borderColor: 'var(--green)' }}>
-              Ver todas as dicas →
-            </Link>
-          </div>
         </div>
       </section>
 

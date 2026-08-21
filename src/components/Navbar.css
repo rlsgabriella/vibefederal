@@ -72,13 +72,6 @@
 .navbar__link:hover { color: var(--green); background: var(--green-light); }
 .navbar__link--active { color: var(--green); background: var(--green-light); }
 
-.navbar__cta {
-  margin-left: 0;
-  margin-top: 8px;
-  padding: 9px 20px;
-  font-size: 0.82rem;
-  text-align: center;
-}
 
 @media (min-width: 768px) {
   .navbar__burger { display: none; }
@@ -100,9 +93,4 @@
     padding: 6px 14px;
   }
 
-  .navbar__cta {
-    margin-left: 10px;
-    margin-top: 0;
-    text-align: inherit;
-  }
 }
