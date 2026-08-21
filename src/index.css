@@ -1,4 +1,4 @@
-/* ===== VIBE FEDERAL – DESIGN SYSTEM v2 ===== */
+/* ===== VIBE FEDERAL – DESIGN SYSTEM ===== */
 :root {
   --green:        #1A7A42;
   --green-dark:   #135C32;
@@ -17,35 +17,27 @@
   --gray-600:     #445060;
   --gray-500:     #6B7A8D;
   --gray-400:     #95A3B3;
-
   --white:        #FFFFFF;
   --off-white:    #F9FAFB;
   --gray-50:      #F4F6F9;
   --gray-100:     #E8EBF0;
   --gray-200:     #CDD2DA;
   --gray-300:     #B0BAC6;
-
   --postit-yellow: #FFF8C5;
   --postit-green:  #DCF0CD;
   --postit-pink:   #FADED9;
   --postit-blue:   #D8EEFB;
-
-  --font-display: 'DM Sans', sans-serif;
-  --font-body:    'Inter', sans-serif;
-
+  --font-display: 'Sora', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
   --radius-sm:  6px;
   --radius-md:  12px;
   --radius-lg:  20px;
   --radius-xl:  32px;
-
   --shadow-xs:    0 1px 4px rgba(0,0,0,0.06);
   --shadow-card:  0 4px 20px rgba(0,0,0,0.07);
   --shadow-hover: 0 12px 40px rgba(0,0,0,0.13);
   --shadow-btn:   0 3px 10px rgba(0,0,0,0.12);
-
   --transition: 0.22s ease;
-
-  /* Breakpoints mobile-first: 480 | 640 | 768 | 900 */
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -68,7 +60,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p { line-height: 1.65; }
-
 img  { max-width: 100%; display: block; }
 a    { text-decoration: none; color: inherit; }
 ul   { list-style: none; }
@@ -79,7 +70,15 @@ button { cursor: pointer; font-family: var(--font-body); border: none; outline: 
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 28px;
+  padding: 0 16px;
+}
+
+@media (min-width: 480px) {
+  .container { padding: 0 20px; }
+}
+
+@media (min-width: 768px) {
+  .container { padding: 0 32px; }
 }
 
 main > section:not(.hero) {
@@ -93,9 +92,19 @@ main > section:not(.hero) {
 }
 
 /* ===== TYPOGRAPHY ===== */
+.section-eyebrow {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--green);
+  margin-bottom: 8px;
+}
+
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(1.55rem, 2.8vw, 2.1rem);
+  font-size: clamp(1.4rem, 4vw, 2.1rem);
   font-weight: 700;
   color: var(--gray-900);
   line-height: 1.2;
@@ -103,40 +112,42 @@ main > section:not(.hero) {
 }
 
 .section-subtitle {
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 400;
   color: var(--gray-500);
   margin: 10px auto 0;
   max-width: 560px;
-  width: 100%;
   line-height: 1.65;
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  .section-subtitle { font-size: 1rem; }
+}
+
 .section-intro {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .section-intro { margin-bottom: 52px; }
 }
 
 .section-intro .section-subtitle {
   margin: 12px auto 0;
-  text-align: center;
 }
 
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
-  min-width: 0;
-}
-
-.cards-grid > * {
-  min-width: 0;
+  gap: 20px;
 }
 
 @media (min-width: 640px) {
   .cards-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
   }
 }
 
@@ -162,8 +173,8 @@ main > section:not(.hero) {
   gap: 8px;
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 0.9rem;
-  padding: 13px 26px;
+  font-size: 0.88rem;
+  padding: 12px 22px;
   border-radius: var(--radius-md);
   transition: all var(--transition);
   box-shadow: var(--shadow-btn);
@@ -172,9 +183,18 @@ main > section:not(.hero) {
   letter-spacing: 0.01em;
 }
 
+@media (min-width: 768px) {
+  .btn {
+    font-size: 0.9rem;
+    padding: 13px 26px;
+  }
+}
+
 .btn:hover  { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
 .btn:active { transform: translateY(0); }
 
+.btn-green   { background: var(--green);   color: #fff; }
+.btn-green:hover   { background: var(--green-dark); }
 .btn-blue    { background: var(--blue);    color: #fff; }
 .btn-blue:hover    { background: var(--blue-dark); }
 .btn-magenta { background: var(--magenta); color: #fff; }
@@ -183,8 +203,6 @@ main > section:not(.hero) {
 .btn-yellow:hover  { background: var(--yellow-dark); }
 .btn-orange  { background: var(--orange);  color: #fff; }
 .btn-orange:hover  { background: var(--orange-dark); }
-.btn-green   { background: var(--green);   color: #fff; }
-.btn-green:hover   { background: var(--green-dark); }
 .btn-outline {
   background: transparent;
   border: 1.5px solid currentColor;
@@ -206,4 +224,4 @@ main > section:not(.hero) {
   50%       { transform: translateY(-7px); }
 }
 
-.fade-up  { animation: fadeUp 0.5s ease both; }
+.fade-up { animation: fadeUp 0.5s ease both; }

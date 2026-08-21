@@ -3,19 +3,37 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
-  gap: 24px;
+  gap: 20px;
   width: 100%;
   margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .postit-board { gap: 24px; }
 }
 
 .postit {
   perspective: 800px;
   cursor: pointer;
   height: 220px;
-  flex: 1 1 260px;
-  max-width: 300px;
+  flex: 1 1 100%;
+  max-width: 100%;
   min-width: 0;
   animation: fadeUp 0.5s ease both;
+}
+
+@media (min-width: 480px) {
+  .postit {
+    flex: 1 1 260px;
+    max-width: 320px;
+  }
+}
+
+@media (min-width: 900px) {
+  .postit {
+    flex: 0 1 calc((100% - 48px) / 3);
+    max-width: 340px;
+  }
 }
 
 .postit__inner {
@@ -37,7 +55,7 @@
   inset: 0;
   background: var(--postit-bg);
   border-radius: 4px 4px 4px 0;
-  padding: 20px 18px 16px;
+  padding: 18px 16px 14px;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   box-shadow:
@@ -48,6 +66,11 @@
   gap: 8px;
   clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
   transition: box-shadow 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .postit__front,
+  .postit__back { padding: 20px 18px 16px; }
 }
 
 .postit:hover .postit__front,
@@ -63,39 +86,36 @@
 }
 
 .postit__emoji {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   line-height: 1;
+}
+
+@media (min-width: 768px) {
+  .postit__emoji { font-size: 1.6rem; }
 }
 
 .postit__titulo {
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 600;
   color: var(--gray-800);
   line-height: 1.2;
 }
 
 .postit__texto {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--gray-700);
   line-height: 1.55;
   flex: 1;
 }
 
 .postit__texto--back {
-  font-size: 0.8rem;
+  font-size: 0.78rem;
 }
 
 .postit__hint {
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   color: var(--gray-400);
   font-style: italic;
   margin-top: auto;
-}
-
-@media (min-width: 900px) {
-  .postit {
-    flex: 0 1 calc((100% - 48px) / 3);
-    max-width: 320px;
-  }
 }

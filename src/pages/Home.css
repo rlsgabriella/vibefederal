@@ -2,6 +2,7 @@
   background: white;
 }
 
+/* ===== DIFERENCIAIS ===== */
 .diferenciais-section {
   background: var(--gray-50);
 }
@@ -9,20 +10,31 @@
 .diferenciais-inner {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 36px;
   align-items: center;
+}
+
+@media (min-width: 900px) {
+  .diferenciais-inner {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
 }
 
 .diferenciais-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 16px;
+}
+
+@media (min-width: 480px) {
+  .diferenciais-grid { grid-template-columns: 1fr 1fr; }
 }
 
 .diferencial-card {
   background: white;
   border-radius: var(--radius-md);
-  padding: 20px;
+  padding: 18px 16px;
   display: flex;
   gap: 14px;
   align-items: flex-start;
@@ -32,16 +44,24 @@
   min-width: 0;
 }
 
+@media (min-width: 768px) {
+  .diferencial-card { padding: 20px; }
+}
+
 .diferencial-card:hover { transform: translateY(-3px); }
 
 .diferencial-card__icone {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+  .diferencial-card__icone { font-size: 1.8rem; }
 }
 
 .diferencial-card h4 {
   font-family: var(--font-display);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--gray-900);
   margin-bottom: 4px;
@@ -50,19 +70,24 @@
 }
 
 .diferencial-card p {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--gray-500);
   line-height: 1.65;
 }
 
+/* ===== DICAS HOME ===== */
 .dicas-home {
-  padding: 80px 0;
+  padding: 48px 0;
   background: white;
+}
+
+@media (min-width: 768px) {
+  .dicas-home { padding: 80px 0; }
 }
 
 .dicas-home__titulo {
   font-family: var(--font-display);
-  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-size: clamp(1.4rem, 4vw, 2rem);
   font-weight: 700;
   color: #0D2B45;
   margin-bottom: 8px;
@@ -71,12 +96,20 @@
 }
 
 .dicas-home__sub {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--gray-500, #6B7A8D);
-  margin-bottom: 40px;
+  margin-bottom: 32px;
   line-height: 1.6;
 }
 
+@media (min-width: 768px) {
+  .dicas-home__sub {
+    font-size: 0.95rem;
+    margin-bottom: 40px;
+  }
+}
+
+/* ===== CTA ===== */
 .cta-section {
   background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
   position: relative;
@@ -86,11 +119,15 @@
 .cta-section::before {
   content: '🌿';
   position: absolute;
-  font-size: 120px;
+  font-size: 100px;
   opacity: 0.05;
-  right: -40px;
-  top: -20px;
+  right: -30px;
+  top: -10px;
   pointer-events: none;
+}
+
+@media (min-width: 480px) {
+  .cta-section::before { font-size: 200px; }
 }
 
 .cta-inner {
@@ -101,19 +138,30 @@
 
 .cta-inner h2 {
   font-family: var(--font-display);
-  font-size: clamp(1.25rem, 5vw, 2rem);
+  font-size: clamp(1.2rem, 5vw, 2rem);
   font-weight: 700;
   color: white;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
+@media (min-width: 768px) {
+  .cta-inner h2 { margin-bottom: 14px; }
+}
+
 .cta-inner p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: rgba(255,255,255,0.85);
   line-height: 1.65;
-  margin-bottom: 28px;
+  margin-bottom: 24px;
+}
+
+@media (min-width: 768px) {
+  .cta-inner p {
+    font-size: 1rem;
+    margin-bottom: 32px;
+  }
 }
 
 .cta-actions {
@@ -128,6 +176,21 @@
   justify-content: center;
 }
 
+@media (min-width: 480px) {
+  .cta-actions {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+  }
+  .cta-actions .btn { width: auto; }
+}
+
+@media (min-width: 768px) {
+  .cta-actions { gap: 16px; }
+}
+
 .cta-actions .btn-green {
   background: white;
   color: var(--green);
@@ -135,43 +198,4 @@
 
 .cta-actions .btn-green:hover {
   background: var(--green-light);
-}
-
-@media (min-width: 480px) {
-  .cta-actions {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .cta-actions .btn {
-    width: auto;
-  }
-
-  .cta-section::before {
-    font-size: 200px;
-  }
-}
-
-@media (min-width: 640px) {
-  .diferenciais-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 900px) {
-  .diferenciais-inner {
-    grid-template-columns: 1fr 1fr;
-    gap: 64px;
-  }
-
-  .cta-inner p {
-    font-size: 1rem;
-    margin-bottom: 32px;
-  }
-
-  .cta-actions {
-    gap: 16px;
-  }
 }

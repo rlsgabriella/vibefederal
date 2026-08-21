@@ -44,16 +44,16 @@ export default function Sobre() {
             <div className="sobre-texto fade-up">
               <h2>Quem somos?</h2>
               <p>
-                A <strong>Vibe Federal</strong> surgiu para simplificar a vida de quem sonha com uma vaga
-                nas Universidades e Institutos Federais. Sabemos que a preparação pode ser cansativa,
-                e por isso oferecemos um caminho de estudo mais claro e visual.
+                A <strong>Vibe Federal</strong> nasceu de um problema simples: quem estuda pra concurso
+                de Docente ou TAE na Rede Federal passa mais tempo garimpando material disperso do que
+                estudando de verdade.
               </p>
               <p>
-                Nossos materiais são diretos e didáticos, feitos para você aprender com estratégia
-                e constância, sem excesso de teoria e sem perder tempo com o que não cai na prova.
+                Por isso transformamos legislação densa em mapas mentais e resumos estratégicos, direto
+                ao que cai na prova, sem enrolação e sem excesso de teoria.
               </p>
               <p>
-                Estudar é sério, e <strong>estudar com leveza e propósito faz toda a diferença</strong> na sua aprovação.
+                Estudar com constância importa. <strong>Estudar com direção importa mais.</strong>
               </p>
             </div>
 

@@ -24,18 +24,19 @@ export default function Hero() {
 
         <div className="badge-urgencia">
           <span className="badge-urgencia__dot" />
-          EDITAL PUBLICADO · PROVA EM BREVE
+          +6 MIL PESSOAS JÁ ESTUDAM COM A VIBE FEDERAL
         </div>
 
         <h1 className="hero__title">
-          Estude para{' '}
-          <span className="hero__title-highlight">Institutos e<br />Universidades</span>{' '}
-          Federais com resultado.
+          Material estratégico para{' '}
+          <span className="hero__title-highlight">Docente e TAE</span>{' '}
+          nos concursos federais.
         </h1>
 
         <p className="hero__subtitle">
-          Mapas mentais no padrão Vibe Federal para você dominar o
-          edital com foco, organização e tranquilidade na preparação.
+          A legislação mais cobrada nos editais, organizada em mapas mentais
+          visuais e didáticos pensados pra otimizar seu tempo e te levar
+          mais longe na preparação.
         </p>
 
         <div className="hero__actions">
@@ -46,14 +47,6 @@ export default function Hero() {
             className="btn hero__btn-primary"
           >
             Ver Materiais Disponíveis →
-          </a>
-          <a
-            href="https://wa.me/5585992223053"
-            target="_blank"
-            rel="noreferrer"
-            className="btn hero__btn-outline"
-          >
-            💬 Fale conosco
           </a>
         </div>
 

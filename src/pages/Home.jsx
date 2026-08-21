@@ -4,7 +4,7 @@ import Hero from '../components/Hero.jsx';
 import TrilhasCarousel from '../components/TrilhasCarousel.jsx';
 import Carrossel from '../components/Carrossel.jsx';
 import PostItBoard from '../components/PostItBoard.jsx';
-import { trilhas, dicas } from '../data/index.js';
+import { dicas } from '../data/index.js';
 import './Home.css';
 
 const diferenciais = [
@@ -30,7 +30,7 @@ export default function Home() {
             </p>
           </div>
 
-          <TrilhasCarousel trilhas={trilhas} />
+          <TrilhasCarousel />
         </div>
       </section>
 

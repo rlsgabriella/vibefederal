@@ -1,101 +1,244 @@
 .trilhas-carousel {
   position: relative;
-  margin: 0 -28px;
-  padding: 0 44px;
+  width: 100%;
 }
 
-.trilhas-carousel__track {
+/* Track */
+.tc__track {
   display: flex;
-  gap: 24px;
+  gap: 16px;
   overflow-x: auto;
-  overflow-y: hidden;
   scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
-  cursor: grab;
-  touch-action: pan-x;
-  padding: 8px 28px 20px;
-  user-select: none;
+  padding: 8px 4px 24px;
 }
 
-.trilhas-carousel__track::-webkit-scrollbar {
-  display: none;
+@media (min-width: 640px) {
+  .tc__track {
+    gap: 20px;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 5%,
+      black 95%,
+      transparent 100%
+    );
+  }
 }
 
-.trilhas-carousel__track--dragging {
-  cursor: grabbing;
-  scroll-snap-type: none;
-  scroll-behavior: auto;
-}
+.tc__track::-webkit-scrollbar { display: none; }
 
-.trilhas-carousel__slide {
-  flex: 0 0 min(280px, calc(100vw - 120px));
+/* Card */
+.tc__card {
   scroll-snap-align: start;
-  min-width: 0;
-}
-
-.trilhas-carousel__slide .trilha-card {
-  height: 100%;
-}
-
-.trilhas-carousel__nav {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 2;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid var(--gray-200);
+  flex-shrink: 0;
+  width: 260px;
+  border-radius: 20px;
+  overflow: hidden;
   background: white;
-  color: var(--gray-700);
+  border: 1.5px solid #E0E4EA;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.07);
   display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-  transition: background 0.2s, color 0.2s, opacity 0.2s, box-shadow 0.2s;
-  cursor: pointer;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
 }
 
-.trilhas-carousel__nav:hover:not(:disabled) {
-  background: var(--green-light);
-  color: var(--green);
-  border-color: var(--green-light);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
-}
-
-.trilhas-carousel__nav:disabled {
-  opacity: 0.35;
-  cursor: default;
-  pointer-events: none;
-}
-
-.trilhas-carousel__nav--prev { left: 2px; }
-.trilhas-carousel__nav--next { right: 2px; }
-
-.trilhas-carousel__hint {
-  text-align: center;
-  font-size: 0.75rem;
-  color: var(--gray-400);
-  margin-top: 4px;
-  padding: 0 28px;
+@media (min-width: 480px) {
+  .tc__card { width: 280px; }
 }
 
 @media (min-width: 768px) {
-  .trilhas-carousel {
-    padding: 0 52px;
+  .tc__card { width: 300px; }
+}
+
+.tc__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 40px rgba(0,0,0,0.11);
+  border-color: var(--card-cor);
+}
+
+/* Badge */
+.tc__destaque {
+  position: absolute;
+  top: 12px; right: 12px;
+  background: white;
+  color: #1a1a1a;
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 100px;
+  z-index: 5;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+/* Header colorido */
+.tc__header {
+  padding: 18px 16px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 100px;
+}
+
+@media (min-width: 768px) {
+  .tc__header {
+    padding: 20px 18px 16px;
+    min-height: 110px;
+  }
+}
+
+.tc__label {
+  font-family: var(--font-display);
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.75);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  margin-bottom: 4px;
+}
+
+.tc__sigla {
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: white;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+@media (min-width: 768px) {
+  .tc__sigla { font-size: 2rem; }
+}
+
+.tc__cargo {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.9);
+  background: rgba(0,0,0,0.15);
+  padding: 3px 9px;
+  border-radius: 100px;
+  margin-top: 6px;
+}
+
+.tc__leaf { font-size: 1.4rem; opacity: 0.4; }
+
+/* Body */
+.tc__body {
+  padding: 14px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+@media (min-width: 768px) {
+  .tc__body { padding: 16px 18px 20px; }
+}
+
+.tc__nome {
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0D2B45;
+  letter-spacing: -0.01em;
+}
+
+.tc__sub {
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: #8A94A3;
+  letter-spacing: 0.05em;
+}
+
+.tc__desc {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #2E3847;
+  line-height: 1.5;
+}
+
+.tc__desc2 {
+  font-size: 0.76rem;
+  color: #6B7A8D;
+  line-height: 1.6;
+}
+
+.tc__tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #1A7A42;
+  margin-top: 2px;
+}
+
+.tc__btn {
+  display: block;
+  text-align: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.86rem;
+  padding: 11px 0;
+  border-radius: 50px;
+  text-decoration: none;
+  margin-top: auto;
+  padding-top: 12px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.tc__btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+/* Botões de navegação — ocultos no mobile */
+.tc__nav {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .tc__nav {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 40px; height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid #CDD2DA;
+    background: white;
+    color: #0D2B45;
+    font-size: 1rem;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    transition: all 0.2s ease;
   }
 
-  .trilhas-carousel__slide {
-    flex: 0 0 300px;
-  }
+  .tc__nav--prev { left: -20px; }
+  .tc__nav--next { right: -20px; }
 
-  .trilhas-carousel__nav {
-    width: 40px;
-    height: 40px;
+  .tc__nav:hover {
+    background: #0D2B45;
+    color: white;
+    border-color: #0D2B45;
   }
+}
 
-  .trilhas-carousel__nav--prev { left: 4px; }
-  .trilhas-carousel__nav--next { right: 4px; }
+/* Hint */
+.tc__hint {
+  text-align: center;
+  font-size: 0.72rem;
+  color: #8A94A3;
+  margin-top: 4px;
 }

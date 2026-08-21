@@ -1,136 +1,87 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import TrilhaCard from './TrilhaCard.jsx';
+import React, { useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { trilhas } from '../data/index.js';
 import './TrilhasCarousel.css';
 
-const DRAG_THRESHOLD = 6;
-
-export default function TrilhasCarousel({ trilhas }) {
+export default function TrilhasCarousel() {
   const trackRef = useRef(null);
-  const dragRef = useRef({ active: false, startX: 0, scrollLeft: 0, moved: false });
 
-  const [canPrev, setCanPrev] = useState(false);
-  const [canNext, setCanNext] = useState(false);
-  const [dragging, setDragging] = useState(false);
-
-  const updateArrows = useCallback(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    const max = el.scrollWidth - el.clientWidth;
-    setCanPrev(el.scrollLeft > 8);
-    setCanNext(el.scrollLeft < max - 8);
-  }, []);
-
-  useEffect(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    updateArrows();
-    el.addEventListener('scroll', updateArrows, { passive: true });
-    window.addEventListener('resize', updateArrows);
-    return () => {
-      el.removeEventListener('scroll', updateArrows);
-      window.removeEventListener('resize', updateArrows);
-    };
-  }, [updateArrows, trilhas.length]);
-
-  const scrollByStep = (direction) => {
-    const el = trackRef.current;
-    if (!el) return;
-    const slide = el.querySelector('.trilhas-carousel__slide');
-    const step = slide ? slide.offsetWidth + 24 : 320;
-    el.scrollBy({ left: direction * step, behavior: 'smooth' });
-  };
-
-  const onPointerDown = (e) => {
-    if (e.button !== 0) return;
-    const el = trackRef.current;
-    if (!el) return;
-    dragRef.current = {
-      active: true,
-      startX: e.clientX,
-      scrollLeft: el.scrollLeft,
-      moved: false,
-    };
-    setDragging(true);
-    el.setPointerCapture(e.pointerId);
-  };
-
-  const onPointerMove = (e) => {
-    if (!dragRef.current.active) return;
-    const el = trackRef.current;
-    if (!el) return;
-    const dx = e.clientX - dragRef.current.startX;
-    if (Math.abs(dx) > DRAG_THRESHOLD) dragRef.current.moved = true;
-    el.scrollLeft = dragRef.current.scrollLeft - dx;
-  };
-
-  const endDrag = (e) => {
-    if (!dragRef.current.active) return;
-    dragRef.current.active = false;
-    setDragging(false);
-    trackRef.current?.releasePointerCapture(e.pointerId);
-    updateArrows();
-  };
-
-  const blockClickIfDragged = (e) => {
-    if (dragRef.current.moved) {
-      e.preventDefault();
-      e.stopPropagation();
-      dragRef.current.moved = false;
-    }
+  const scroll = (dir) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const card = track.querySelector('.tc__card');
+    const cardW = card ? card.offsetWidth + 20 : 300;
+    track.scrollBy({ left: dir * cardW, behavior: 'smooth' });
   };
 
   return (
     <div className="trilhas-carousel">
+
+      {/* Botão anterior */}
       <button
-        type="button"
-        className="trilhas-carousel__nav trilhas-carousel__nav--prev"
-        onClick={() => scrollByStep(-1)}
-        disabled={!canPrev}
-        aria-label="Trilha anterior"
+        className="tc__nav tc__nav--prev"
+        onClick={() => scroll(-1)}
+        aria-label="Anterior"
       >
-        <ChevronLeft size={22} />
+        ←
       </button>
 
-      <div
-        ref={trackRef}
-        className={`trilhas-carousel__track${dragging ? ' trilhas-carousel__track--dragging' : ''}`}
-        role="region"
-        aria-label="Carrossel de trilhas"
-        tabIndex={0}
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={endDrag}
-        onPointerCancel={endDrag}
-        onPointerLeave={(e) => {
-          if (dragRef.current.active) endDrag(e);
-        }}
-        onClickCapture={blockClickIfDragged}
-        onKeyDown={(e) => {
-          if (e.key === 'ArrowLeft') { e.preventDefault(); scrollByStep(-1); }
-          if (e.key === 'ArrowRight') { e.preventDefault(); scrollByStep(+1); }
-        }}
-      >
-        {trilhas.map((t, i) => (
-          <div key={t.id} className="trilhas-carousel__slide">
-            <TrilhaCard trilha={t} delay={i * 80} />
+      {/* Track deslizante */}
+      <div className="tc__track" ref={trackRef}>
+        {trilhas.map((t) => (
+          <div
+            key={t.id}
+            className="tc__card"
+            style={{ '--card-cor': t.cor }}
+          >
+            {t.destaque && (
+              <div className="tc__destaque">⭐ Mais vendido</div>
+            )}
+
+            {/* Header colorido */}
+            <div className="tc__header" style={{ background: t.cor }}>
+              <div>
+                <p className="tc__label">TRILHA LEGAL</p>
+                <h3 className="tc__sigla">{t.sigla}</h3>
+                {t.cargo && (
+                  <span className="tc__cargo">{t.cargo}</span>
+                )}
+              </div>
+              <span className="tc__leaf">🌿</span>
+            </div>
+
+            {/* Body */}
+            <div className="tc__body">
+              <h4 className="tc__nome">{t.nome}</h4>
+              <p className="tc__sub">{t.subtitulo?.toUpperCase()}</p>
+              <p className="tc__desc">{t.descricaoCurta}</p>
+              <p className="tc__desc2">{t.descricaoLonga}</p>
+              <p className="tc__tag">{t.tag}</p>
+              <Link
+                to={t.href}
+                className="tc__btn"
+                style={{
+                  background: t.cor,
+                  color: t.cor === '#C8A200' ? '#1a1a1a' : '#fff'
+                }}
+              >
+                Ver detalhes
+              </Link>
+            </div>
           </div>
         ))}
       </div>
 
+      {/* Botão próximo */}
       <button
-        type="button"
-        className="trilhas-carousel__nav trilhas-carousel__nav--next"
-        onClick={() => scrollByStep(1)}
-        disabled={!canNext}
-        aria-label="Próxima trilha"
+        className="tc__nav tc__nav--next"
+        onClick={() => scroll(1)}
+        aria-label="Próximo"
       >
-        <ChevronRight size={22} />
+        →
       </button>
 
-      <p className="trilhas-carousel__hint" aria-hidden="true">
-        Arraste para o lado ou use as setas
-      </p>
+      <p className="tc__hint">Arraste para o lado ou use as setas</p>
     </div>
   );
 }

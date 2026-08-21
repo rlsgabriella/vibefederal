@@ -1,29 +1,40 @@
+/* ===== QUEM SOMOS ===== */
 .sobre-section {
-  padding: 48px 0;
   background: white;
 }
 
 .sobre-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 40px;
+  gap: 36px;
   align-items: center;
+}
+
+@media (min-width: 900px) {
+  .sobre-grid {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px;
+  }
 }
 
 .sobre-texto h2 {
   font-family: var(--font-display);
-  font-size: 1.7rem;
+  font-size: clamp(1.4rem, 4vw, 1.9rem);
   font-weight: 700;
   color: var(--gray-900);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   letter-spacing: -0.02em;
 }
 
 .sobre-texto p {
-  font-size: 0.96rem;
+  font-size: 0.93rem;
   color: var(--gray-600);
   line-height: 1.75;
   margin-bottom: 14px;
+}
+
+@media (min-width: 768px) {
+  .sobre-texto p { font-size: 0.96rem; }
 }
 
 .sobre-texto strong { color: var(--gray-900); font-weight: 700; }
@@ -31,14 +42,18 @@
 /* Números */
 .sobre-numeros {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 14px;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (min-width: 480px) {
+  .sobre-numeros { gap: 14px; }
 }
 
 .sobre-num-card {
   background: var(--gray-50);
   border-radius: 16px;
-  padding: 22px 18px;
+  padding: 18px 14px;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -46,26 +61,33 @@
   transition: transform 0.2s;
 }
 
+@media (min-width: 768px) {
+  .sobre-num-card { padding: 22px 18px; }
+}
+
 .sobre-num-card:hover { transform: translateY(-3px); }
 
 .sobre-num-card strong {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--gray-900);
   letter-spacing: -0.03em;
   line-height: 1;
 }
 
+@media (min-width: 768px) {
+  .sobre-num-card strong { font-size: 2rem; }
+}
+
 .sobre-num-card span {
-  font-size: 0.78rem;
+  font-size: 0.72rem;
   color: var(--gray-500);
   font-weight: 500;
 }
 
-/* Valores */
+/* ===== VALORES ===== */
 .valores-section {
-  padding: 48px 0;
   background: var(--gray-50);
   border-top: 1px solid var(--gray-100);
 }
@@ -73,18 +95,30 @@
 .valores-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 18px;
-  margin-top: 36px;
+  gap: 14px;
+  margin-top: 32px;
+}
+
+@media (min-width: 480px) {
+  .valores-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 900px) {
+  .valores-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 .valor-card {
   background: white;
   border-radius: 16px;
-  padding: 24px 20px;
+  padding: 20px 18px;
   border: 1px solid var(--gray-100);
   box-shadow: 0 2px 10px rgba(0,0,0,0.04);
   animation: fadeUp 0.5s ease both;
   transition: transform 0.2s, box-shadow 0.2s;
+}
+
+@media (min-width: 768px) {
+  .valor-card { padding: 24px 20px; }
 }
 
 .valor-card:hover {
@@ -93,14 +127,18 @@
 }
 
 .valor-emoji {
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .valor-emoji { font-size: 1.8rem; margin-bottom: 12px; }
 }
 
 .valor-card h3 {
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: 0.92rem;
   font-weight: 700;
   color: var(--gray-900);
   margin-bottom: 6px;
@@ -108,14 +146,13 @@
 }
 
 .valor-card p {
-  font-size: 0.80rem;
+  font-size: 0.78rem;
   color: var(--gray-500);
   line-height: 1.6;
 }
 
-/* FAQ */
+/* ===== FAQ ===== */
 .faq-section {
-  padding: 48px 0;
   background: white;
   border-top: 1px solid var(--gray-100);
 }
@@ -124,8 +161,12 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
-  margin-top: 32px;
+  margin-top: 28px;
   max-width: 740px;
+}
+
+@media (min-width: 768px) {
+  .faq-lista { margin-top: 36px; }
 }
 
 .faq-item {
@@ -142,17 +183,24 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 20px;
+  padding: 14px 16px;
   width: 100%;
   background: transparent;
   border: none;
   cursor: pointer;
   text-align: left;
-  font-size: 0.90rem;
+  font-size: 0.87rem;
   font-weight: 600;
   color: var(--gray-800);
   gap: 12px;
   transition: background 0.15s;
+}
+
+@media (min-width: 768px) {
+  .faq-pergunta {
+    padding: 16px 20px;
+    font-size: 0.90rem;
+  }
 }
 
 .faq-pergunta:hover { background: var(--gray-50); }
@@ -161,17 +209,19 @@
 .faq-chevron { font-size: 0.65rem; color: var(--gray-400); flex-shrink: 0; }
 
 .faq-resposta {
-  padding: 0 20px 18px;
-  font-size: 0.85rem;
+  padding: 14px 16px 16px;
+  font-size: 0.83rem;
   color: var(--gray-600);
   line-height: 1.7;
   border-top: 1px solid var(--gray-100);
-  padding-top: 14px;
 }
 
-/* Contato */
+@media (min-width: 768px) {
+  .faq-resposta { padding: 14px 20px 18px; }
+}
+
+/* ===== CONTATO ===== */
 .contato-section {
-  padding: 48px 0;
   background: var(--gray-50);
   border-top: 1px solid var(--gray-100);
 }
@@ -179,13 +229,21 @@
 .contato-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 16px;
+}
+
+@media (min-width: 640px) {
+  .contato-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (min-width: 900px) {
+  .contato-grid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
 }
 
 .contato-card {
   background: white;
   border-radius: 18px;
-  padding: 28px 24px;
+  padding: 24px 20px;
   border: 1px solid var(--gray-100);
   box-shadow: 0 2px 12px rgba(0,0,0,0.05);
   display: flex;
@@ -195,62 +253,38 @@
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
+@media (min-width: 768px) {
+  .contato-card { padding: 28px 24px; }
+}
+
 .contato-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0,0,0,0.08);
 }
 
-.contato-icon { font-size: 2rem; }
+.contato-icon { font-size: 1.8rem; }
+
+@media (min-width: 768px) {
+  .contato-icon { font-size: 2rem; }
+}
 
 .contato-card h3 {
   font-family: var(--font-display);
-  font-size: 1.05rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--gray-900);
   letter-spacing: -0.01em;
 }
 
+@media (min-width: 768px) {
+  .contato-card h3 { font-size: 1.05rem; }
+}
+
 .contato-card p {
-  font-size: 0.82rem;
+  font-size: 0.8rem;
   color: var(--gray-500);
   line-height: 1.6;
   flex: 1;
 }
 
 .contato-card .btn { justify-content: center; margin-top: 4px; }
-
-@media (min-width: 480px) {
-  .sobre-numeros {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media (min-width: 640px) {
-  .valores-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 768px) {
-  .sobre-section,
-  .valores-section,
-  .contato-section,
-  .faq-section {
-    padding: 72px 0;
-  }
-}
-
-@media (min-width: 900px) {
-  .sobre-grid {
-    grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
-  }
-
-  .valores-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .contato-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
