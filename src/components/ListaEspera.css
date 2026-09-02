@@ -47,13 +47,24 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-width: 560px;
+  max-width: 640px;
 }
 
 @media (min-width: 640px) {
   .lista-espera__form {
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .le__input {
+    flex: 1;
+    min-width: 130px;
+  }
+
+  .le__input:last-of-type {
+    flex: 1.4;
+    min-width: 160px;
   }
 }
 

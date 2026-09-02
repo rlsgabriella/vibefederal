@@ -6,10 +6,15 @@ const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbylFimGfKOHoUuq9f7D3
 
 export default function ListaEspera() {
   const [enviado, setEnviado] = useState(false);
-  const [form, setForm] = useState({ nome: '', email: '', concurso: '' });
+  const [form, setForm] = useState({ nome: '', email: '', concurso: '', contato: '' });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
+    if (!emailValido) {
+      alert('Por favor, insira um e-mail válido.');
+      return;
+    }
     try {
       await fetch(SCRIPT_URL, {
         method: 'POST',
@@ -18,7 +23,7 @@ export default function ListaEspera() {
         body: JSON.stringify(form),
       });
       setEnviado(true);
-      setForm({ nome: '', email: '', concurso: '' });
+      setForm({ nome: '', email: '', concurso: '', contato: '' });
     } catch (erro) {
       console.error('Erro ao enviar:', erro);
       setEnviado(true);
@@ -48,7 +53,7 @@ export default function ListaEspera() {
           <form className="lista-espera__form" onSubmit={handleSubmit}>
             <input
               type="text"
-              placeholder="Seu primeiro nome"
+              placeholder="Nome"
               value={form.nome}
               onChange={e => setForm({ ...form, nome: e.target.value })}
               required
@@ -64,7 +69,14 @@ export default function ListaEspera() {
             />
             <input
               type="text"
-              placeholder="Qual concurso você faz?"
+              placeholder="WhatsApp"
+              value={form.contato}
+              onChange={e => setForm({ ...form, contato: e.target.value })}
+              className="le__input"
+            />
+            <input
+              type="text"
+              placeholder="Qual concurso?"
               value={form.concurso}
               onChange={e => setForm({ ...form, concurso: e.target.value })}
               required
