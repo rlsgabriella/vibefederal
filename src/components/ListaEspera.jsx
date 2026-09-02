@@ -2,13 +2,27 @@ import React, { useState } from 'react';
 import { concursosAcompanhados } from '../data/index.js';
 import './ListaEspera.css';
 
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbylFimGfKOHoUuq9f7D3H7kEsPY_wR1rf0h1E9CqUMFBkji5kvWzEHbexY9Yg_D-UAw/exec';
+
 export default function ListaEspera() {
   const [enviado, setEnviado] = useState(false);
   const [form, setForm] = useState({ nome: '', email: '', concurso: '' });
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setEnviado(true);
+    try {
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      setEnviado(true);
+      setForm({ nome: '', email: '', concurso: '' });
+    } catch (erro) {
+      console.error('Erro ao enviar:', erro);
+      setEnviado(true);
+    }
   };
 
   return (
