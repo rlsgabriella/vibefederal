@@ -1,0 +1,110 @@
+.lista-espera {
+  padding: 80px 0;
+  background: #F5F7FA;
+}
+
+@media (min-width: 768px) { .lista-espera { padding: 100px 0; } }
+
+.lista-espera__titulo {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.8vw, 1.9rem);
+  font-weight: 700;
+  color: #0D2B45;
+  margin: 8px 0;
+  letter-spacing: -0.02em;
+}
+
+.lista-espera__sub {
+  font-size: 0.95rem;
+  color: #6B7A8D;
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 36px;
+}
+
+/* Logos cinza */
+.lista-espera__logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+.le__logo-pill {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #95A3B3;
+  background: #E8EBF0;
+  padding: 6px 14px;
+  border-radius: 100px;
+  letter-spacing: 0.04em;
+  cursor: default;
+}
+
+/* Formulário */
+.lista-espera__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 560px;
+}
+
+@media (min-width: 640px) {
+  .lista-espera__form {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.le__input {
+  flex: 1;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: 1.5px solid #CDD2DA;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: #2E3847;
+  background: white;
+  outline: none;
+  transition: border-color 0.2s;
+  min-width: 0;
+}
+
+.le__input:focus { border-color: #1A7A42; }
+.le__input::placeholder { color: #95A3B3; }
+
+.le__btn {
+  padding: 12px 22px;
+  background: #0D2B45;
+  color: white;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.88rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.2s;
+  flex-shrink: 0;
+}
+
+.le__btn:hover { background: #071A2C; transform: translateY(-1px); }
+
+.le__confirmacao {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #1A7A42;
+  background: #E2F5EA;
+  padding: 14px 20px;
+  border-radius: 10px;
+  max-width: 560px;
+}
+
+.le__lgpd {
+  font-size: 0.72rem;
+  color: #95A3B3;
+  margin-top: 12px;
+  max-width: 560px;
+}

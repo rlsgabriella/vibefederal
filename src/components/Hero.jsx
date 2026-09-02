@@ -4,22 +4,12 @@ import './Hero.css';
 export default function Hero() {
   return (
     <section className="hero">
-
-      {/* Vídeo como background */}
       <video
         className="hero__bg-video"
         src="/hero-video.mov"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
+        autoPlay loop muted playsInline preload="auto"
       />
-
-      {/* Overlay escuro por cima do vídeo */}
       <div className="hero__overlay" />
-
-      {/* Conteúdo centralizado */}
       <div className="container hero__content">
 
         <div className="badge-urgencia">
@@ -28,43 +18,41 @@ export default function Hero() {
         </div>
 
         <h1 className="hero__title">
-          Material estratégico para{' '}
-          <span className="hero__title-highlight">Docente e TAE</span>{' '}
-          nos concursos federais.
+          <span className="hero__title-line1">
+            Você não tem tempo de garimpar material.
+          </span>
+          <span className="hero__title-highlight">
+            A gente já garimpou.
+          </span>
         </h1>
 
         <p className="hero__subtitle">
-          A legislação mais cobrada nos editais, organizada em mapas mentais
-          visuais e didáticos pensados pra otimizar seu tempo e te levar
-          mais longe na preparação.
+          Legislação, língua portuguesa e conhecimentos pedagógicos em mapas
+          visuais, organizados por concurso e recortados do edital. Feito pra
+          quem dá aula o dia todo, tem casa, tem vida — e não pode perder fim
+          de semana montando material.
         </p>
 
         <div className="hero__actions">
+          <a href="#catalogo" className="hero__btn-primary">
+            Ver materiais do meu concurso →
+          </a>
           <a
             href="https://wa.me/5585992223053"
             target="_blank"
             rel="noreferrer"
-            className="btn hero__btn-primary"
+            className="hero__btn-outline"
           >
-            Ver Materiais Disponíveis →
+            💬 Fale conosco
           </a>
         </div>
 
-        <div className="hero__stats">
-          <div className="hero__stat">
-            <strong>5+</strong>
-            <span>Materiais prontos</span>
-          </div>
-          <div className="hero__stat-divider" />
-          <div className="hero__stat">
-            <strong>12+</strong>
-            <span>Concursos cobertos</span>
-          </div>
-          <div className="hero__stat-divider" />
-          <div className="hero__stat">
-            <strong>🌿</strong>
-            <span>Método Vibe Federal</span>
-          </div>
+        <div className="hero__trust">
+          <span>+6 mil alunos</span>
+          <span className="hero__trust-dot">·</span>
+          <span>Atualizado conforme o edital</span>
+          <span className="hero__trust-dot">·</span>
+          <span>Acesso imediato em PDF</span>
         </div>
 
       </div>
