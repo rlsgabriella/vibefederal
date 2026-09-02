@@ -7,12 +7,12 @@ export default function Catalogo() {
     <section className="catalogo" id="catalogo">
       <div className="container">
 
-        <p className="section-eyebrow">— ESCOLHA SEU CONCURSO</p>
-        <h2 className="catalogo__titulo">Acha o seu e começa hoje.</h2>
+        <p className="section-eyebrow">— ENCONTRE SEU CONCURSO</p>
+        <h2 className="catalogo__titulo">Ache o seu e comece hoje.</h2>
         <p className="catalogo__sub">
-          Cada trilha é uma matéria do seu edital: Legal pra legislação,
-          Pedagógica pros conhecimentos pedagógicos. Escolhe pelo seu
-          concurso e leva o material pronto.
+          Cada trilha cobre uma matéria do seu edital: Legal para legislação,
+          Pedagógica para conhecimentos pedagógicos. Escolha pelo seu
+          concurso e leve o material pronto.
         </p>
 
         <div className="catalogo__grid">

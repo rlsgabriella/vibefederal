@@ -28,7 +28,7 @@ export default function Hero() {
 
         <p className="hero__subtitle">
           Legislação, língua portuguesa e conhecimentos pedagógicos em mapas
-          visuais, organizados por concurso e recortados do edital. Feito pra
+          visuais, organizados por concurso e recortados do edital. Feito para
           quem dá aula o dia todo, tem casa, tem vida — e não pode perder fim
           de semana montando material.
         </p>

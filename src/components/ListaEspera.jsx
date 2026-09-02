@@ -36,11 +36,11 @@ export default function ListaEspera() {
 
         <p className="section-eyebrow">— DE OLHO NOS EDITAIS</p>
         <h2 className="lista-espera__titulo">
-          Não achou o seu? A gente pode estar produzindo.
+          Não encontrou o seu? Pode ser que estejamos produzindo.
         </h2>
         <p className="lista-espera__sub">
-          Acompanhamos os editais destes órgãos. Diz qual é o seu e você
-          é a primeira a saber quando o material sair.
+          Acompanhamos os editais destes órgãos. Informe o seu e seja a primeira
+          a saber quando o material estiver disponível.
         </p>
 
         <div className="lista-espera__logos">
@@ -86,7 +86,7 @@ export default function ListaEspera() {
           </form>
         ) : (
           <div className="le__confirmacao">
-            ✅ Prontinho! Assim que sair material pro seu concurso, você é a primeira a saber.
+            ✅ Pronto! Assim que sair material para o seu concurso, você será a primeira a saber.
           </div>
         )}
 
