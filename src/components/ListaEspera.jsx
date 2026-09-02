@@ -7,14 +7,19 @@ const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbylFimGfKOHoUuq9f7D3
 export default function ListaEspera() {
   const [enviado, setEnviado] = useState(false);
   const [form, setForm] = useState({ nome: '', email: '', concurso: '', contato: '' });
+  const [erroEmail, setErroEmail] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
     const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email);
     if (!emailValido) {
-      alert('Por favor, insira um e-mail válido.');
+      setErroEmail('Digite um e-mail válido.');
       return;
     }
+
+    setErroEmail('');
+
     try {
       await fetch(SCRIPT_URL, {
         method: 'POST',
@@ -61,12 +66,18 @@ export default function ListaEspera() {
             />
             <input
               type="email"
-              placeholder="E-mail"
+              placeholder="Seu melhor e-mail"
               value={form.email}
-              onChange={e => setForm({ ...form, email: e.target.value })}
+              onChange={e => {
+                setForm({ ...form, email: e.target.value });
+                setErroEmail('');
+              }}
               required
-              className="le__input"
+              className={`le__input ${erroEmail ? 'le__input--erro' : ''}`}
             />
+            {erroEmail && (
+              <span className="le__erro">{erroEmail}</span>
+            )}
             <input
               type="text"
               placeholder="WhatsApp"

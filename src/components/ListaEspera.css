@@ -106,6 +106,25 @@
 .le__input:focus { border-color: #1A7A42; }
 .le__input::placeholder { color: #95A3B3; }
 
+.le__input--erro {
+  border-color: #E24B4A;
+}
+
+.le__erro {
+  font-size: 0.75rem;
+  color: #E24B4A;
+  margin-top: -8px;
+  display: block;
+}
+
+@media (min-width: 640px) {
+  .le__erro {
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+  }
+}
+
 .le__btn {
   width: 100%;
   padding: 14px 22px;
