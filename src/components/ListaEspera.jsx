@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { concursosAcompanhados } from '../data/index.js';
 import './ListaEspera.css';
 
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbylFimGfKOHoUuq9f7D3H7kEsPY_wR1rf0h1E9CqUMFBkji5kvWzEHbexY9Yg_D-UAw/exec';
@@ -48,12 +47,6 @@ export default function ListaEspera() {
           a saber quando o material estiver disponível.
         </p>
 
-        <div className="lista-espera__logos">
-          {concursosAcompanhados.map(sigla => (
-            <div key={sigla} className="le__logo-pill">{sigla}</div>
-          ))}
-        </div>
-
         {!enviado ? (
           <form className="lista-espera__form" onSubmit={handleSubmit}>
             <input
@@ -66,7 +59,7 @@ export default function ListaEspera() {
             />
             <input
               type="email"
-              placeholder="Seu melhor e-mail"
+              placeholder="Email"
               value={form.email}
               onChange={e => {
                 setForm({ ...form, email: e.target.value });

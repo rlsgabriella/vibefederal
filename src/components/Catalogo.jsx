@@ -25,6 +25,9 @@ export default function Catalogo() {
               {t.destaque && (
                 <div className="cat__badge">⭐ Mais vendido</div>
               )}
+              {t.seloExtra && (
+                <div className="cat__badge cat__badge--extra">{t.seloExtra}</div>
+              )}
               {t.emBreve && (
                 <div className="cat__badge cat__badge--breve">Em breve</div>
               )}
@@ -32,7 +35,7 @@ export default function Catalogo() {
               <div className="cat__header" style={{ background: t.emBreve ? '#E8EBF0' : t.cor }}>
                 <div>
                   <p className="cat__label" style={{ color: t.emBreve ? '#8A94A3' : 'rgba(255,255,255,0.75)' }}>
-                    {t.emBreve ? 'EM BREVE' : t.tag.toUpperCase()}
+                    {t.tag.toUpperCase()}
                   </p>
                   <h3 className="cat__sigla" style={{ color: t.emBreve ? '#6B7A8D' : 'white' }}>
                     {t.sigla}
@@ -61,7 +64,7 @@ export default function Catalogo() {
                   }}
                   {...(t.href.startsWith('http') ? { target: '_blank', rel: 'noreferrer' } : {})}
                 >
-                  {t.emBreve ? 'Avisar quando lançar' : '→ Ver material'}
+                  {t.emBreve ? 'Entre na lista de espera' : '→ Ver material'}
                 </a>
               </div>
             </div>

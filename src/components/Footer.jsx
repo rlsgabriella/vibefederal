@@ -16,8 +16,7 @@ export default function Footer() {
             />
           </Link>
           <p className="footer__tagline">
-            Mapas mentais e trilhas por concurso para quem se prepara para a
-            rede federal com leveza, foco e material alinhado ao edital.
+           Materiais visuais e organizados por concurso para fazer seu estudo render mais.
           </p>
           <div className="footer__social">
             <a
@@ -39,29 +38,36 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="footer__col">
+        {/* <div className="footer__col">
           <h4>Materiais</h4>
-          <ul>
+          <ul className="footer__col-list">
             <li>
-              <Link to="/ifc">Trilha Legal IFC</Link>
+              <a href="https://vibefederal.com.br/ifsc/" target="_blank" rel="noreferrer">
+                Trilha Legal — IFSC
+              </a>
             </li>
             <li>
-              <Link to="/ifpi">Trilha Legal IFPI</Link>
+              <a href="https://vibefederal.com.br/tp-ifsc/" target="_blank" rel="noreferrer">
+                Trilha Pedagógica — IFSC
+              </a>
             </li>
             <li>
-              <Link to="/ifce">Trilha Legal IFCE</Link>
+              <a href="https://vibefederal.com.br/tlseducce/" target="_blank" rel="noreferrer">
+                Trilha — SEDUC-CE
+              </a>
             </li>
             <li>
-              <Link to="/ifal">Trilha Legal IFAL</Link>
+              <a href="https://vibefederal.com.br/ifsuldeminas/" target="_blank" rel="noreferrer">
+                Trilha Legal — IFSULDEMINAS
+              </a>
             </li>
             <li>
-              <Link to="/panorama-tae">Panorama Legal TAE</Link>
-            </li>
-            <li>
-              <Link to="/materiais">Ver todos →</Link>
+              <a href="https://vibefederal.com.br/ifpi/" target="_blank" rel="noreferrer">
+                Trilha Legal — IFPI
+              </a>
             </li>
           </ul>
-        </div>
+        </div> */}
 
         <div className="footer__col">
           <h4>Navegação</h4>
@@ -91,7 +97,7 @@ export default function Footer() {
       <div className="footer__bottom">
         <div className="container">
           <p>© 2026 Vibe Federal. Todos os direitos reservados.</p>
-          <p>Feito com 🌿 para quem estuda com leveza</p>
+          <p>🌿 A gente organiza o material. Você segue estudando.</p>
         </div>
       </div>
     </footer>

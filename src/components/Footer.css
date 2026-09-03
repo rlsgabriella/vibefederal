@@ -30,7 +30,6 @@
 .footer__logo {
   display: inline-flex;
   align-items: center;
-  margin-bottom: 12px;
   opacity: 0.9;
   transition: opacity 0.2s;
 }
@@ -46,6 +45,7 @@
 }
 
 .footer__social {
+  margin-bottom: 20px;
   display: flex;
   gap: 10px;
   flex-wrap: wrap;

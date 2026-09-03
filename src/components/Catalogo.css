@@ -77,6 +77,13 @@
   border: 1px solid #E0E4EA;
 }
 
+.cat__badge--extra {
+  background: #FFF3E0;
+  color: #854F0B;
+  box-shadow: none;
+  border: 1px solid #FFD08A;
+}
+
 /* Header */
 .cat__header {
   padding: 20px 18px 16px;

@@ -14,7 +14,7 @@ export default function Hero() {
 
         <div className="badge-urgencia">
           <span className="badge-urgencia__dot" />
-          +6 MIL PESSOAS JÁ ESTUDAM COM A VIBE FEDERAL
+          +6 MIL MATERIAIS VENDIDOS
         </div>
 
         <h1 className="hero__title">
@@ -27,10 +27,10 @@ export default function Hero() {
         </h1>
 
         <p className="hero__subtitle">
-          Legislação, língua portuguesa e conhecimentos pedagógicos em mapas
-          visuais, organizados por concurso e recortados do edital. Feito para
-          quem dá aula o dia todo, tem casa, tem vida — e não pode perder fim
-          de semana montando material.
+          Conteúdos do edital transformados em materiais visuais, organizados
+          por concurso e pensados para facilitar seu estudo. Feito para quem
+          trabalha, tem casa, tem vida e não pode perder o fim de semana
+          montando material.
         </p>
 
         <div className="hero__actions">
@@ -47,13 +47,6 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="hero__trust">
-          <span>+6 mil alunos</span>
-          <span className="hero__trust-dot">·</span>
-          <span>Atualizado conforme o edital</span>
-          <span className="hero__trust-dot">·</span>
-          <span>Acesso imediato em PDF</span>
-        </div>
 
       </div>
     </section>
