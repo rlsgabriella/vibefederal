@@ -1,6 +1,7 @@
 /* ===== QUEM SOMOS ===== */
 .sobre-section {
   background: white;
+  padding: 40px 0 72px;
 }
 
 .sobre-grid {
@@ -148,15 +149,6 @@
 .valores-section .section-title {
   margin-top: 8px;
   font-size: clamp(1.4rem, 2.8vw, 1.9rem);
-}
-
-.section-intro {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.section-intro .section-subtitle {
-  margin: 10px auto 0;
 }
 
 .valores-grid {
