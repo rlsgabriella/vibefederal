@@ -67,7 +67,6 @@ export default function Sobre() {
         </div>
       </div>
 
-      {/* Quem somos */}
       <section className="sobre-section">
         <div className="container">
           <div className="sobre-grid">
