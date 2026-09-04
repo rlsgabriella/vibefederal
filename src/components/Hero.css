@@ -283,17 +283,28 @@
   }
 
   .hero__actions {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
+    flex-wrap: wrap;
     gap: 10px;
     width: 100%;
   }
 
-  .hero__btn-primary,
+  .hero__btn-primary {
+    font-size: 0.82rem;
+    padding: 12px 20px;
+    width: auto;
+    align-self: flex-start;
+    white-space: nowrap;
+  }
+
   .hero__btn-outline {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
+    font-size: 0.82rem;
+    padding: 11px 20px;
+    width: auto;
+    align-self: flex-start;
+    white-space: nowrap;
   }
 
 }
