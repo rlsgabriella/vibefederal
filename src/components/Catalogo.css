@@ -118,8 +118,10 @@
   border-radius: 100px;
   margin-top: 7px;
 }
-
-.cat__leaf { font-size: 1.3rem; }
+.cat__leaf { 
+  font-size: 1.15rem; 
+  margin-top: 18px; 
+}
 
 /* Body */
 .cat__body {
